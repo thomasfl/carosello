@@ -1,0 +1,138 @@
+.tabedelic {
+	clear: both;
+	display: block;
+	margin-bottom: 1em;
+	position: relative;
+}
+.tabedelic:before,
+.tabedelic:after {
+	content: "";
+	display: table;
+}
+.tabedelic:after {
+	clear: both;
+}
+.tabedelic a:hover, .tabedelic a:active, .tabedelic a:focus {
+   outline: 0;
+}
+.tabedelic > .tabedelic-headers {
+	overflow: hidden;
+	position: relative;
+}
+.tabedelic > .tabedelic-headers [class*="scicon-"] {
+	line-height: 1em;
+}
+.tabs.tabsleft.tabedelic > .tabedelic-headers {
+	float: left;
+	margin-bottom: 0;
+	overflow: visible;
+}
+.tabs.tabsright.tabedelic > .tabedelic-headers {
+	float: right;
+	margin-bottom: 0;
+	overflow: visible;
+}
+.tabedelic > .tabedelic-headers > .tabedelic-header {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	height: auto;
+	line-height: 3.5em;
+	overflow: hidden;
+	padding: 0 1.275em;
+	position: relative;
+	text-decoration: none;
+	white-space: nowrap;
+	z-index: 1;
+}
+.tabedelic.simple > .tabedelic-headers > .tabedelic-header {
+	border-right-width: 0;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	overflow: visible;
+}
+.tabedelic.simple > .tabedelic-headers > .tabedelic-header:after {
+	content: '';
+	left: 0;
+	position: absolute;
+	width: 100%;
+}
+.tabedelic.accordion,
+.tabedelic.accordion > .tabedelic-headers,
+.tabedelic.accordion > .tabedelic-headers > .tabedelic-header {
+	overflow: visible;
+	width: 100%!important;
+}
+.tabs.columned.tabedelic > .tabedelic-headers > .tabedelic-header {
+	border-bottom-width: 0; 
+	float: none;
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.tabs.tabsleft.tabedelic > .tabedelic-headers > .tabedelic-header {
+	text-align: left;
+}
+.tabs.tabsright.tabedelic > .tabedelic-headers > .tabedelic-header {
+	text-align: right;
+}
+.tabedelic.simple > .tabedelic-headers > .header-active,
+.tabedelic.accordion > .tabedelic-headers > .header-active {
+	border-bottom-width: 0;
+}
+.tabs.tabsleft > .tabedelic-headers > .header-active {
+	border-right-width: 0;
+}
+.tabs.tabsright > .tabedelic-headers > .header-active {
+	border-left-width: 0;
+}
+.tabedelic .tabedelic-panel {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: none;
+	float: left;
+	font-size: .95em;
+	height: auto;
+	/*overflow: hidden;*/
+	position: relative;
+	z-index: 0;
+	-webkit-transform: translateZ(0);
+}
+.tabedelic.accordion > .tabedelic-headers > .tabedelic-panel {
+	border-bottom-width: 0;
+	border-top-width: 0;
+}
+.tabedelic .panel-active {
+	display: block;
+}
+.tabedelic .tabedelic-panel .inner-panel {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+	padding: 1.5em 2em 1em;
+	position: relative;
+}
+.tabedelic > .tabedelic-headers > .tabedelic-header > .icon-tab-open {
+	display: none;
+	line-height: inherit;
+	margin-right: .775em;
+	position: relative;
+	vertical-align: middle;
+}
+.tabedelic > .tabedelic-headers > .header-active > .icon-tab-open {
+	display: inline-block;
+	float: left;
+}
+.tabedelic > .tabedelic-headers > .tabedelic-header > .icon-tab-closed {
+	display: inline-block;
+	float: left;
+	line-height: inherit;
+	margin-right: .775em;
+	position: relative;
+	vertical-align: middle;
+}
+.tabedelic > .tabedelic-headers > .header-active .icon-tab-closed {
+	display: none;
+}

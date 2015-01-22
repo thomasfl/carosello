@@ -1,0 +1,230 @@
+/**
+ * BxSlider v4.0 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2012
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 0;
+}
+.bx-viewport {
+  height: 0;
+  -webkit-transition: height 150ms ease-out;
+  -moz-transition: height 150ms ease-out;
+  -o-transition: height 150ms ease-out;
+  transition: height 150ms ease-out;
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+}
+
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.pix_carousels div {
+  -webkit-backface-visibility: hidden;
+}
+
+/** THEME
+===================================*/
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+  display: block!important;
+  min-height: 50px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  padding-top: 30px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item {
+  display: inline-block;
+  position: relative;
+  top: 6px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 14px;
+  margin: 0 3px;
+  outline: 0;
+  text-decoration: none;
+  text-indent: -9999px;
+  width: 14px;
+  -webkit-transition: background 150ms ease-out;
+  -moz-transition: background 150ms ease-out;
+  -o-transition: background 150ms ease-out;
+  transition: background 150ms ease-out;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: transparent;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+  left: 10px;
+}
+.bx-wrapper .bx-prev:after {
+  color: inherit;
+  content: '\e87c';
+  display: block;
+  text-align: center;
+  line-height: 26px;
+  position: absolute;
+  text-indent: -1px;
+  top: 0;
+  width: 100%;
+}
+
+.bx-wrapper .bx-next {
+  right: 10px;
+}
+
+.bx-wrapper .bx-next:after {
+  color: inherit;
+  content: '\e87d';
+  display: block;
+  text-align: center;
+  line-height: 26px;
+  position: absolute;
+  text-indent: 1px;
+  top: 0;
+  width: 100%;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'scicon-entypo-fontello';
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  margin-top: -16px;
+  opacity: 0;
+  outline: 0;
+  position: absolute;
+  text-indent: -9999px;
+  top: 50%;
+  width: 32px;
+  z-index: 9999;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease-out;
+  -moz-transition: all 150ms ease-out;
+  -o-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
+  -webkit-backface-visibility: hidden;
+}
+.bx-wrapper .bx-controls-direction a:active {
+  -webkit-transform: scale(0.88);
+  transform: scale(0.88);
+}
+.bx-wrapper:hover .bx-controls-direction a {
+  opacity: 1;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+
+/* AUTO CONTROLS (START / STOP) */
+
+.bx-wrapper .bx-controls-auto .bx-start,
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  font-family: 'scicon-awesome-fontello';
+  font-size: 14px;
+  text-indent: -9999px;
+  position: absolute;
+  outline: 0;
+  left: 0;
+  text-align: center;
+  top: 0;
+  width: 20px;
+}
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+  display: none;
+}
+.bx-wrapper .bx-controls-auto .bx-start:after {
+  content: '\e8ba';
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-indent: 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:after {
+  content: '\e8be';
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-indent: 0;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: center;
+  width: 100%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  height: 20px;
+  right: 0;
+  width: 20px;
+}
+
+/* WOOCOMMERCE CSS FIX */
+
+.pix_woocarousels ul.products li {
+  clear: none!important;
+}
